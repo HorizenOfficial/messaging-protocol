@@ -23,11 +23,11 @@ When sent as a part of the memo field, a ZEN message is to be in JSON format and
 ```
 
 The example has spacing/TABs but in production no spaces will be present between the fields. The fields in a ZEN message are:
-`zenmsg`:  Designates this JSON object as a ZEN message (not to be confused)
-`ver`: protocol version. The initial implementation will have protocol version 1. It is to support only plain text messages. Later protocol versions will have more features.
-`from`: Address of the sender (T address). It is needed to make sure the sender can identify himself to the recipient.
-`message`: This is the actual ZEN text (in the future html/RTF etc.) message that one user sends and another receives.
-`sign`: Signature made of the text message content (encoded in HEX – see below!) using the T address. This proves that the sender actually has control over the T address (`from`).
+  * `zenmsg`:  Designates this JSON object as a ZEN message (not to be confused)
+  * `ver`: protocol version. The initial implementation will have protocol version 1. It is to support only plain text messages. Later protocol versions will have more features.
+  * `from`: Address of the sender (T address). It is needed to make sure the sender can identify himself to the recipient.
+  * `message`: This is the actual ZEN text (in the future html/RTF etc.) message that one user sends and another receives.
+  * `sign`: Signature made of the text message content (encoded in HEX – see below!) using the T address. This proves that the sender actually has control over the T address (`from`).
 
 With this messaging format the effective maximum length of a user message is approx. 340 characters (single byte chars). Future protocol versions may allow larger messages by sending one message split into multiple transactions etc. When a user sends a message (`zenmsg`), the text message is signed with the  T address (from) and the signature is included as sign.
 
