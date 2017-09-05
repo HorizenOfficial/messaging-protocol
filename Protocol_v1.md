@@ -42,7 +42,7 @@ There may be issues with message signing and non-ASCII text: the signing/verific
 
 The above rules should give us the same behavior on different platforms and will not depend on possible issues with UNICODE support on a command line or in different UI frameworks etc. The conversion of UNICODE chars to bytes using UTF-8 is expected to work the same way no matter what GUI client is doing the conversion.
 
-### ZEN a Anonymous messages
+### ZEN Anonymous messages
 
 When the message is sent anonymously, the structure is to be slightly different: When user A sends the first ever message to user B - the GUI client generates a unique thread ID (UUID) for the messaging direction UserA->UserB, and stores it permanently. All subsequent unsigned messages UserA->UserB will come with the same persistent ID. The GUI client will present all anonymous messages that are received with the same ID, as coming from the same anonymous sender. An anonymous message example would be:
 
@@ -74,4 +74,21 @@ The difference as compared to a message with an identified user is that sign/fro
 The new field is returnaddress. Adding a return address may reveal a user's identity indirectly or otherwise weaken the anonymity… In addition thread ID is not 100% reliable as an indication that messages come from the same user, especially in group messaging scenarios (other users may see and fake it).
 
 A message will either be signed with a T address or be anonymous having a thread ID (UUID) - but never both.
+
+### ZEN Special messages
+
+One type of special message is meant to carry the details of a messaging identity in the `message` element. It may be used by the sender to inform the recipient of the sender's identity, so the recipient would not need to import this data in some other way. Such a message looks like this:
+
+
+```
+{
+   "zenmsg":
+   {
+     "version": 1,
+     "from": "znkdgNwjHXxQzugMsCJWxUjftdZ6SqSXfaS",
+     "message": "{\"zenmessagingidentity\":{\"nickname\":\"Joe\",\"firstname\":\"Joe\",\"surname\":\"Average\",\"senderidaddress\":\"znkdgNwjHXxQzugMsCJWxUjftdZ6SqSXfaS\",\"sendreceiveaddress\":\"zcCkpuFWYhsCeHJfSnQbJKNj1WyoJSbiXr6kKSjpVUxBF2WPMtSeKcUCyXocqeXXjTyBgyK6HoM1DqjAZoCRrvbzjhXLStv\"}}",
+     "sign": "IA1uRBSayNeurA7T4ld3hk78ewuclgihvNi187E+j0n/eqQW1eQ98ukeXygrVk050nw1DWGIZYlsnQnqnVtelzQ=",
+   }
+}
+```
 
