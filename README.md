@@ -1,4 +1,5 @@
 # ZEN Messaging Protocol
+![Logo](https://avatars0.githubusercontent.com/u/29291571?v=4&s=200 "Logo")
 
 One of the directions of development of ZENCash is secure communications. This specification is intended to describe in detail the initial messaging features to be implemented and to also chart a course for their extension in the future. To ensure inter-application compatibility ZEN messaging is to be based on a well-defined protocol so that future apps (wallets/chat clients etc) may be made compatible with each other. 
 
@@ -10,9 +11,11 @@ Based on the above we get 4 major uses case combinations (1-2-1 / group) combine
 
 ## Contents
 ### [ZEN Messaging Protocol - version 1](Protocol_v1.md)
+### [ZEN Messaging Identities](Identities.md)
 
 
-=================================
+
+---
 
 Copyright (c) 2017 Ivan Vaklinov
 
