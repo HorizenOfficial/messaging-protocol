@@ -1,5 +1,7 @@
 ## ZEN Messaging Protocol - version 1
 
+### Basics
+
 ZEN user messages are to be transported as a part of T→Z and Z→Z ZEN transactions in the memo field. The memo filed has a maximum length of 512 bytes and when specified on a command line needs to be in HEX format. There are currently some limitations in JoinSplits/→Z transactions that complicate the design of the protocol somewhat:
   * When Z address receives an incoming transaction the recipient sees the date/amount/memo but does not see the sending T/Z address. This seems to be the case for both T→Z and Z→Z ZEN transactions.
   * When a transaction is sent from (also sometimes to – [bug #2](https://github.com/ZencashOfficial/zencash-swing-wallet-ui/issues/2)) a Z address, it is not recorded in the sender’s wallet.dat
@@ -9,6 +11,8 @@ The limitations require that a sender’s identity be established at the level o
   * T address to sign the actual message sent and prove the sender’s identity (for the use case when the user is not anonymous).
 
 A sender (human) may (potentially) have multiple messaging identities/contact details but for every identity/contact details, a pair of Z+T addresses are to be created/designated for use. Every ZEN message is to be sent as one Z→Z transaction from sender to recipient (in the first protocol version).
+
+### ZEN Messages with identifiable sender
 
 When sent as a part of the memo field, a ZEN message is to be in JSON format and be encoded in UTF-8 in the memo field (all clients need to read/write the JSON to bytes using UTF-8). Example ZEN message (with an identifiable sender):
 ```
@@ -37,6 +41,8 @@ There may be issues with message signing and non-ASCII text: the signing/verific
   * This resulting string (e.g. HEX encoded like 3132A4B52C3B65...) is then signed and verified (not the original message).
 
 The above rules should give us the same behavior on different platforms and will not depend on possible issues with UNICODE support on a command line or in different UI frameworks etc. The conversion of UNICODE chars to bytes using UTF-8 is expected to work the same way no matter what GUI client is doing the conversion.
+
+### ZEN a Anonymous messages
 
 When the message is sent anonymously, the structure is to be slightly different: When user A sends the first ever message to user B - the GUI client generates a unique thread ID (UUID) for the messaging direction UserA->UserB, and stores it permanently. All subsequent unsigned messages UserA->UserB will come with the same persistent ID. The GUI client will present all anonymous messages that are received with the same ID, as coming from the same anonymous sender. An anonymous message example would be:
 
