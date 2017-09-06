@@ -10,9 +10,10 @@ Messaging use cases may be categorized as:
 Based on the above we get 4 major uses case combinations (1-2-1 / group) combined with (anonymous / identifiable senders). The term `user` ought not to be strictly understood as a human user. We could easily imagine scenarios where AI/bots etc. use the messaging protocol.
 
 ## Contents
-### [ZEN Messaging Identities](MsgIdentities.md)
-### [ZEN Messaging Protocol - version 1](Protocol_v1.md)
+### 1. [ZEN Messaging Identities](MsgIdentities.md)
+### 2. [ZEN Messaging Protocol - version 1](Protocol_v1.md)
 
+<br/>
 <br/>
 
 Currently known implementations of this protocol are:
