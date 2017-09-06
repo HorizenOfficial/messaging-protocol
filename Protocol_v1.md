@@ -92,3 +92,22 @@ One type of special message is meant to carry the details of a messaging identit
 }
 ```
 
+### ZEN Group Messaging
+
+Group messaging involves multiple users sending messages to a single channel/group. Messages are visible to all
+users involved. The channel has a Z address that all users send messages to. Messages may have identifiable senders or they may be anonymous. To let other users know his identity details any user may send to the channel
+a [ZEN special message](Protocol_v1.md#zen-special-messages) containing these identity details. If a user does not send such a special message other users will know his T address but will not necessarily know who is behind it.
+
+The way to obtain a Z address for a messaging channel is implementation specific. One way recommended for
+user convenience is to let users use a common phrase, such as a #HashTag. This phrase will then be converted into a Z address by each user individually and imported in his wallet/GUI client.
+
+The process of converting a phrase to a Z address key that may be imported in a wallet is:
+1. Convert the phrase characters to bytes using UTF-8 encoding
+2. Calculate the SHA256 digest of the bytes
+3. Modify the first byte with logical AND 0x0f
+4. Prepend two bytes 0xab, 0x36 
+5. Calculate a checksum by doing SHA256(SHA256(Output_of_step_4))
+6. Take the first 4 bytes of the checksum and append them to the output of step 4
+7. Encode the output of step 6 as base 58 (https://en.wikipedia.org/wiki/Base58)
+   
+As an example if the phrase is `Z pigs likes to snooze. ZZZZ` the Z private key that may be imported into the wallet is `SKxtHJsneoLByrwME9Nh4cd4AvYLNK9jJkAnB3AHNW794udD1qpx`. Two existing reference implementation of this kind of conversion are available in the [ZENCashJS library](https://github.com/ZencashOfficial/zencashjs/blob/master/README.md#example-usage-private-address) and the [Swing GUI Wallet](https://github.com/ZencashOfficial/zencash-swing-wallet-ui/blob/master/src/java/com/vaklinov/zcashui/Util.java#L313).

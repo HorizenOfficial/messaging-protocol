@@ -14,7 +14,9 @@ Based on the above we get 4 major uses case combinations (1-2-1 / group) combine
 ### [ZEN Messaging Protocol - version 1](Protocol_v1.md)
 
 
-
+Currently known implementations of this protocol are:
+  * [ZENChat](https://github.com/ZencashOfficial/zenchat)
+  * [ZENCash Desktop GUI wallet](https://github.com/ZencashOfficial/zencash-swing-wallet-ui)
 
 ---
 
