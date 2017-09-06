@@ -10,7 +10,7 @@ Messaging use cases may be categorized as:
 Based on the above we get 4 major uses case combinations (1-2-1 / group) combined with (anonymous / identifiable senders).
 
 ## Contents
-### [ZEN Messaging Identities](Identities.md)
+### [ZEN Messaging Identities](MsgIdentities.md)
 ### [ZEN Messaging Protocol - version 1](Protocol_v1.md)
 
 
