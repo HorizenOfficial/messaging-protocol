@@ -7,7 +7,7 @@ Messaging use cases may be categorized as:
   * 1-2-1 and group messaging – in the former case two users chat with each other (classic chat case). In the latter case many users send messages to a common “channel”. New users may be added to the channel.
   * Messages with identifiable senders and anonymous messages – in some cases users wish to prove their identity to the recipients. In other cases users wish to remain anonymous.
 
-Based on the above we get 4 major uses case combinations (1-2-1 / group) combined with (anonymous / identifiable senders).
+Based on the above we get 4 major uses case combinations (1-2-1 / group) combined with (anonymous / identifiable senders). The term `user` ought not to be strictly understood as a human user. We could easily imagine scenarios where AI/bots etc. use the messaging protocol.
 
 ## Contents
 ### [ZEN Messaging Identities](MsgIdentities.md)

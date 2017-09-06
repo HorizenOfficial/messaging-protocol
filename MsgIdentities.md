@@ -35,7 +35,7 @@ When encoded as bytes/blob (e.g for transmission over some byte-oriented protoco
 
 The way users share their identities to establish contact is not strictly defined. The implementation of this could also be done in different ways:
   * As an initial implementation GUI wallets/messengers could allow users to import/export/copy/paste their ZEN identity or a contact’s identity as a JSON object. The ZEN identities will be shared by users either privately (via other channels) or as a convenience on a dedicated ZEN slack channel.
-  * Once user A imports user B’s identity, the respective GUI client could ask user A if he wishes to send his identity to user B as a [ZEN special message](Protocol_v1.md#zen-special-messages). This is possible only if the message can fit in one Z→Z transaction. Then user B’s GUI client will prompt him to import user A’s identity from the message. 
+  * Once user A imports user B’s identity, the respective GUI client could ask user A if he wishes to send his identity to user B as a [ZEN special message](Protocol_v1.md#zen-special-messages). This is possible only if the message can fit in one Z→Z transaction (for ZEN messaging protocol version 1). Then user B’s GUI client will prompt him to import user A’s identity from the message. 
   * Later a new (unfortunately centralized) “ZEN messaging server” could be implemented where users may publish their ZEN identities. The messaging GUI clients will access the server via some standardized interface (preferably a REST-ful Web service that accepts/serves JSON). Users can publish or search identities on the server.
   * The desired long-term solution is a distributed registry of ZEN messaging identities on the ZEN blockchain!
   
