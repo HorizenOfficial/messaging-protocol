@@ -84,7 +84,7 @@ One type of special message is meant to carry the details of a messaging identit
 {
    "zenmsg":
    {
-     "version": 1,
+     "ver": 1,
      "from": "znkdgNwjHXxQzugMsCJWxUjftdZ6SqSXfaS",
      "message": "{\"zenmessagingidentity\":{\"nickname\":\"Joe\",\"firstname\":\"Joe\",\"surname\":\"Average\",\"senderidaddress\":\"znkdgNwjHXxQzugMsCJWxUjftdZ6SqSXfaS\",\"sendreceiveaddress\":\"zcCkpuFWYhsCeHJfSnQbJKNj1WyoJSbiXr6kKSjpVUxBF2WPMtSeKcUCyXocqeXXjTyBgyK6HoM1DqjAZoCRrvbzjhXLStv\"}}",
      "sign": "IA1uRBSayNeurA7T4ld3hk78ewuclgihvNi187E+j0n/eqQW1eQ98ukeXygrVk050nw1DWGIZYlsnQnqnVtelzQ=",
