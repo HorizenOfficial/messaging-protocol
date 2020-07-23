@@ -17,8 +17,8 @@ Based on the above we get 4 major uses case combinations (1-2-1 / group) combine
 <br/>
 
 Currently known implementations of this protocol are:
-  * [ZENChat](https://github.com/ZencashOfficial/zenchat)
-  * [ZENCash Desktop GUI wallet](https://github.com/ZencashOfficial/zencash-swing-wallet-ui)
+  * [ZENChat](https://github.com/HorizenOfficial/zenchat)
+  * [ZENCash Desktop GUI wallet](https://github.com/HorizenOfficial/zencash-swing-wallet-ui)
 
 ---
 
