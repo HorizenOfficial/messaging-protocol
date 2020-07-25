@@ -4,7 +4,7 @@
 
 ZEN user messages are to be transported as a part of T→Z and Z→Z ZEN transactions in the memo field. The memo filed has a maximum length of 512 bytes and when specified on a command line needs to be in HEX format. There are currently some limitations in JoinSplits/→Z transactions that complicate the design of the protocol somewhat:
   * When Z address receives an incoming transaction the recipient sees the date/amount/memo but does not see the sending T/Z address. This seems to be the case for both T→Z and Z→Z ZEN transactions.
-  * When a transaction is sent from (also sometimes to – [bug #2](https://github.com/ZencashOfficial/zencash-swing-wallet-ui/issues/2)) a Z address, it is not recorded in the sender’s wallet.dat
+  * When a transaction is sent from (also sometimes to – [bug #2](https://github.com/HorizenOfficial/zencash-swing-wallet-ui/issues/2)) a Z address, it is not recorded in the sender’s wallet.dat
   
 The limitations require that a sender’s identity be established at the level of the messaging protocol (by signing the message with a T address). Every sender of a message (taking part in ZEN messaging) needs to have two addresses:
   * Z address to send and receive the messaging transaction (used for “transport” only)
@@ -110,4 +110,4 @@ The process of converting a phrase to a Z address key that may be imported in a 
 6. Take the first 4 bytes of the checksum and append them to the output of step 4
 7. Encode the output of step 6 as base 58 (https://en.wikipedia.org/wiki/Base58)
    
-As an example if the phrase is `Z pigs likes to snooze. ZZZZ` the Z private key that may be imported into the wallet is `SKxtHJsneoLByrwME9Nh4cd4AvYLNK9jJkAnB3AHNW794udD1qpx`. Two existing reference implementation of this kind of conversion are available in the [ZENCashJS library](https://github.com/ZencashOfficial/zencashjs/blob/master/README.md#example-usage-private-address) and the [Swing GUI Wallet](https://github.com/ZencashOfficial/zencash-swing-wallet-ui/blob/master/src/java/com/vaklinov/zcashui/Util.java#L313).
+As an example if the phrase is `Z pigs likes to snooze. ZZZZ` the Z private key that may be imported into the wallet is `SKxtHJsneoLByrwME9Nh4cd4AvYLNK9jJkAnB3AHNW794udD1qpx`. Two existing reference implementation of this kind of conversion are available in the [ZENCashJS library](https://github.com/HorizenOfficial/zencashjs/blob/master/README.md#example-usage-private-address) and the [Swing GUI Wallet](https://github.com/HorizenOfficial/zencash-swing-wallet-ui/blob/master/src/java/com/vaklinov/zcashui/Util.java#L313).
